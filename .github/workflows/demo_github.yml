@@ -1,0 +1,30 @@
+# This is a database script deployment pipeline. Any database changes, DDL or DML can be populated through this
+name: sf_dev_deploy
+
+#controls when the workflow will run
+on:
+# Triggers the workflow on push or pull request events but only for the main branch
+#NOTE : changed path to fake so that it doesn't triigger on check in to dav... may eventually change it back  
+  push:
+    branches: [ main ]
+    #paths: '**/dev/databases/**'
+
+  #pull_request;
+  #branchs : [main]
+
+  # Allows you to run this workflow manually from the Actyions tab. This needs to be commented if needs to be triggered automatically
+  #workflow_dispatch:
+
+  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Data stage Objects
+        run: echo "This is a demo workflow"
+
+
+  
