@@ -28,6 +28,6 @@ deploy_dbt:
       role: DBT_PROD_ROLE
       database: dbt_prod_db
       warehouse: dbt_prod_wh
-      schema: dbt_prod_schema
+      schema: DBT_RSOANKAMBLE
       threads: 4
       client_session_keep_alive: False
