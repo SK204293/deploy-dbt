@@ -25,9 +25,9 @@ deploy_dbt:
       user: "{{ env_var('DEPLOY_DBT_SNOWFLAKE_USERNAME') }}"
       password: "{{ env_var('DEPLOY_DBT_SNOWFLAKE_PASSWORD') }}"
 
-      role: TRANSFORMER
-      database: ANALYTICS
-      warehouse: TRANSFORMING
-      schema: ANALYTICS
+      role: DBT_PROD_ROLE
+      database: dbt_prod_db
+      warehouse: dbt_prod_wh
+      schema: dbt_prod_schema
       threads: 4
       client_session_keep_alive: False
